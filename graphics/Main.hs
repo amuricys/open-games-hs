@@ -5,7 +5,9 @@
 
 module Main where
 
+import OpenGames
 import OpenGames.Preprocessor
+import OpenGames.Preprocessor.CompileBlock
 import Graphics as Gfx
 
 import Data.GraphViz
@@ -81,7 +83,29 @@ bidding = [parseTree|
    returns   :      ;
    |]
 
+prisonersDilemmaVerbose = [parseTree|
 
+   inputs    :      ;
+   feedback  :      ;
+
+   :----------------------------:
+   inputs    :      ;
+   feedback  :      ;
+   operation : dependentDecision "player1" (const [Cooperate,Defect]);
+   outputs   : decisionPlayer1 ;
+   returns   : prisonersDilemmaMatrix decisionPlayer1 decisionPlayer2 ;
+
+   inputs    :      ;
+   feedback  :      ;
+   operation : dependentDecision "player2" (const [Cooperate,Defect]);
+   outputs   : decisionPlayer2 ;
+   returns   : prisonersDilemmaMatrix decisionPlayer2 decisionPlayer1 ;
+
+   :----------------------------:
+
+   outputs   :      ;
+   returns   :      ;
+  |]
 
 main :: IO ()
-main = writeDotFile "dotfile" (graphToDot customParams (convertBlock bidding))
+main = writeDotFile "dotfile" (graphToDot customParams (convertBlock prisonersDilemmaVerbose))

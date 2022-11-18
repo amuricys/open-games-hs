@@ -1,0 +1,8 @@
+packages:
+  open-games-hs.cabal
+
+source-repository-package
+    type: git
+    location: https://github.com/tweag/monad-bayes.git
+    tag: 50b486598cd949c4a7906598fc357a80cae3bbc6
+    --sha256: 1qpfcfmzg15ly7kbxsfas5pfw0ai8mmnx9r35w560i1yz3z2ackf

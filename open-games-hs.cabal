@@ -48,17 +48,16 @@ library
       Examples.Markov.TestSimpleMonteCarlo
       Examples.Markov.TestSimpleMonteCarlo.Continuation
       Graphics
+      OpenGames
   other-modules:
       Data.Utils
       Examples.Markov.NStageMarkov
       Examples.Staking.AndGateMarkov
       Examples.Staking.AndGateMarkovMC
-      OpenGames
       OpenGames.Engine.BayesianGamesNonState
       OpenGames.Engine.IOGames
       OpenGames.Engine.Nat
       OpenGames.Engine.Vec
-      Paths_open_games_hs
   hs-source-dirs:
       src
   build-depends:
@@ -91,7 +90,6 @@ library
 executable graphics
   main-is: Main.hs
   other-modules:
-      Paths_open_games_hs
   hs-source-dirs:
       graphics
   build-depends:
@@ -125,7 +123,6 @@ executable graphics
 executable open-games-exe
   main-is: Main.hs
   other-modules:
-      Paths_open_games_hs
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
